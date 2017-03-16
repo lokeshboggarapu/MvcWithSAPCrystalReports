@@ -1,0 +1,19 @@
+﻿@{
+    ViewBag.Title = "Reportbill";
+}
+<h2>ReportBill</h2>
+@model MvcApplication8.Models.Reportbill_VModel
+
+<script language="javascript" type="text/javascript">
+
+    function pop()
+    {
+        win = window.open("/Reports/ReportView.aspx?id="+document.getElementById('txtQuery').value,"_blank","height=1000,Width=1000");
+        win.focus();
+
+    }
+    
+</script>
+<input type="text" id="txtQuery" />
+<input type="button" id="Button1" value="button" OnClick ="pop()" />
+<iframe src="@Model.ReportBillPath"  style="width:100%; height:1000px; border:none;"></iframe> 
